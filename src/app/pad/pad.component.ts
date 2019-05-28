@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Sample } from '../sample';
-import { SAMPLES } from '../samples';
 
 @Component({
   selector: 'app-pad',
@@ -8,20 +7,22 @@ import { SAMPLES } from '../samples';
   styleUrls: ['./pad.component.css']
 })
 export class PadComponent implements OnInit {
-  samples = SAMPLES;
   toggle = false;
+  @Input() sample: Sample;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  sound(sample: Sample): void {
+  sound(): void {
     let audio = new Audio();
-    audio.src = sample.path;
+    audio.src = this.sample.path;
     audio.load();
     audio.play();
     this.toggle = !this.toggle;
   }
+
+
 
 }
