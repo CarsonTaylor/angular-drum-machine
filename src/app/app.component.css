@@ -1,0 +1,17 @@
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column{
+    float: left;
+    width: 75px;
+}
+
+body{
+    background-color: red;
+    border-radius: 15px;
+    border-color: darkslategray;
+    border-style: solid;
+}

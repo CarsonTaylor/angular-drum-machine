@@ -1,0 +1,8 @@
+<ul *ngFor="let sample of samples">
+  <button class = "myButton" 
+         (click)="sound(sample)"
+         [style.background-color]="toggle ? 'darkblue' : 'grey'">
+         {{sample.name}}
+  </button>
+</ul>
+
