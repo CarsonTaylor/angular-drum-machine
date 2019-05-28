@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SAMPLES } from '../samples';
 
 @Component({
@@ -8,6 +8,7 @@ import { SAMPLES } from '../samples';
 })
 export class PadcolumnComponent implements OnInit {
   samples = SAMPLES;
+  @Input() index: number;
 
   constructor() { }
 

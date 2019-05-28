@@ -8,7 +8,7 @@ import { PadComponent } from '../pad/pad.component'
 })
 export class ClickComponent implements OnInit {
   play: boolean;
-  time: number = 0;
+  time: number = 1;
   interval;
 
   constructor() { }
@@ -21,6 +21,8 @@ export class ClickComponent implements OnInit {
     this.play = true;
     this.interval = setInterval(() => {
       this.time++;
+      if(this.time % 9 == 0)
+        this.time = 1;
     },500)
   }
 

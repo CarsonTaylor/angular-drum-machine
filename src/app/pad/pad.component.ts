@@ -9,6 +9,7 @@ import { Sample } from '../sample';
 export class PadComponent implements OnInit {
   toggle = false;
   @Input() sample: Sample;
+  id: number;
 
   constructor() { }
 
