@@ -15,10 +15,13 @@
     padding-top: 10px;
 }
 
-body{
+.board{
     background-color: red;
     border-radius: 15px;
     border-color: darkslategray;
     border-style: solid;
     width: 640px;
+    height: 360px;
+
 }
+
