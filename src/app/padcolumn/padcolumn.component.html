@@ -1,3 +1,5 @@
-<app-pad *ngFor="let sample of samples"
-          [sample]="sample"></app-pad>    
+<app-pad *ngFor="let sample of samples; let i = index"
+          [sample]="sample" [row]="i"
+          (isActive) = "setActives($event)"></app-pad>   
+<app-click (beat) = "playColumn($event)" [style.display] = "'none'"></app-click>  
 

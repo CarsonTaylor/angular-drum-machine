@@ -1,6 +1,7 @@
 <button class = "myButton" 
-           (click)="sound()"
-           [style.background-color]="toggle ? '#35e0e0' : 'grey'"
+           (click)="comboMethod()"
+           [ngStyle]="{'margin-left.px': x, 'margin-top.px': y, 'background-color': padcolor}"
+           [style.background-color]="toggle ? '#61e0e2' : 'grey'"
            [style.color]="toggle ? 'black' : 'white'">
            {{sample.name}}
 </button>

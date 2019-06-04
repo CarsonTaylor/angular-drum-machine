@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Sample } from '../sample';
 
 @Component({
@@ -9,21 +9,31 @@ import { Sample } from '../sample';
 export class PadComponent implements OnInit {
   toggle = false;
   @Input() sample: Sample;
-  id: number;
+  @Input() row: number;
+  @Output() isActive = new EventEmitter<number>();
+  audio: HTMLAudioElement;
 
   constructor() { }
 
   ngOnInit() {
+    this.audio = new Audio();
+    this.audio.src = this.sample.path;
   }
 
   sound(): void {
-    let audio = new Audio();
-    audio.src = this.sample.path;
-    audio.load();
-    audio.play();
+    this.audio.load();
+    //this.audio.play();
     this.toggle = !this.toggle;
   }
 
+  notifyIsActive() {
+    this.isActive.emit(this.row)
+  }
+
+  comboMethod(){
+    this.sound();
+    this.notifyIsActive();
+  }
 
 
 }
