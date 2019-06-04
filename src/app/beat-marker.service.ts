@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
+import { PlayPauseService } from './play-pause.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BeatMarkerService {
   beat: number = 1;
+  interval;
 
-  constructor() { }
+  constructor(private playPauseService: PlayPauseService) { }
 
   getBeat(){
     return this.beat;
@@ -17,6 +19,20 @@ export class BeatMarkerService {
   }
 
   incrementBeat(){
-    this.beat++;
+    this.interval = setInterval(() => { 
+      if(!this.playPauseService.getPlay()){
+        return;
+      }
+      this.beat++;
+      if(this.beat % 9 == 0)
+        this.beat = 1;
+      console.log(this.beat); 
+    },350)
   }
+
+  pauseClick(){
+    clearInterval(this.interval);
+  }
+
+
 }

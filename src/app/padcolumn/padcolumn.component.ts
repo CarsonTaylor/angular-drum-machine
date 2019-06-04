@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { SAMPLES } from '../samples';
 
 @Component({
@@ -12,7 +12,7 @@ export class PadcolumnComponent implements OnInit {
   actives: boolean[];
   sounds: HTMLAudioElement[];
   size: string = '60px';
-  @Output() beatMarker = new EventEmitter<string>();
+  toggle: boolean = false;
 
   constructor() { }
 
@@ -39,7 +39,10 @@ export class PadcolumnComponent implements OnInit {
           this.sounds[i].play();
         }
       }
-      this.beatMarker.emit(this.size);
+      this.toggle = !this.toggle;
+    }
+    else{
+      this.toggle = false;
     }
   }
 

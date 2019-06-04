@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BeatMarkerService } from '../beat-marker.service';
 
 @Component({
   selector: 'app-board',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BoardComponent implements OnInit{
-  constructor() { }
+  constructor(private beatMarkerService: BeatMarkerService) { }
 
   ngOnInit(){
-
+    //this.beatMarkerService.incrementBeat();
   }
 }

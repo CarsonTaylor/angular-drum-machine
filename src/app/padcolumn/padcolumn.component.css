@@ -1,0 +1,15 @@
+.led-box {
+  height: 30px;
+  width: 25%;
+  float: left;
+}
+
+.led-blue {
+  border: solid;
+  margin-left: 17px;
+  width: 24px;
+  height: 24px;
+  background-color: rgb(102, 104, 107);
+  border-radius: 50%;
+  
+}

@@ -9,8 +9,6 @@ import { BeatMarkerService } from '../beat-marker.service';
   styleUrls: ['./click.component.css']
 })
 export class ClickComponent implements OnInit {
-  play: boolean;
-  time: number = 1;
   interval;
   @Output() beat = new EventEmitter<number>();
 
@@ -23,26 +21,8 @@ export class ClickComponent implements OnInit {
 
   startClick(){
     this.interval = setInterval(() => { 
-      if(!this.playPauseService.getPlay())
-        return;
-      this.time++;
-      if(this.time % 9 == 0)
-        this.time = 1;
-      this.beat.emit(this.time); 
-      this.beatMarkerService.setBeat(this.time);
-      console.log(this.beatMarkerService.getBeat()); 
+      if(this.playPauseService.getPlay())
+        this.beat.emit(this.beatMarkerService.getBeat()); 
     },350)
   }
-
-  pauseClick(){
-    this.play=false;
-    clearInterval(this.interval);
-  }
-
-  resetClick(){
-    this.play=false;
-    clearInterval(this.interval);
-    this.time = 1;
-  }
-
 }
