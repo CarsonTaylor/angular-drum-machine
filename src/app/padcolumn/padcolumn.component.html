@@ -2,6 +2,5 @@
           [sample]="sample" [row]="i"
           (isActive) = "setActives($event)"></app-pad>   
 <app-click (beat) = "playColumn($event)" [style.display] = "'none'"></app-click>  
-<div class="led-box">
-    <div [style.background-color]="toggle ? 'orange' : '#66686b'"class="led-blue"></div>
-</div>
+<div [style.background-color]="toggle ? 'orange' : '#66686b'"class="led"></div>
+

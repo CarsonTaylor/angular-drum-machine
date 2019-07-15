@@ -8,15 +8,12 @@ import { BeatMarkerService } from '../beat-marker.service';
   styleUrls: ['./conductor.component.css']
 })
 export class ConductorComponent implements OnInit {
-  play: boolean;
-  time: number = 1;
   interval;
 
   constructor(private playPauseService: PlayPauseService, 
               private beatMarkerService: BeatMarkerService) { }
 
   ngOnInit() {
-    this.play = false;
   }
 
   start(){

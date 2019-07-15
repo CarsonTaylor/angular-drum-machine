@@ -1,0 +1,10 @@
+-add numerous drum kits with selector on board
+-add ability to store and play pre-made beats (API?)
+-add ability to upload user created beats (API?)
+-add numerous board views (small 8) and big (16) - routing
+-add tempo slider control (angular material)
+-add reset beat marker feature
+-fix synchronization issues?? find out whats going on here
+-brushed-metal css styling
+
+

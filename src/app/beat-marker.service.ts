@@ -24,10 +24,10 @@ export class BeatMarkerService {
         return;
       }
       this.beat++;
-      if(this.beat % 9 == 0)
+      if(this.beat % 17 == 0)
         this.beat = 1;
       console.log(this.beat); 
-    },350)
+    },175)
   }
 
   pauseClick(){

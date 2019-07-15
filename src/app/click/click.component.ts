@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PlayPauseService } from '../play-pause.service';
-import { VirtualTimeScheduler } from 'rxjs';
 import { BeatMarkerService } from '../beat-marker.service';
 
 @Component({
@@ -23,6 +22,6 @@ export class ClickComponent implements OnInit {
     this.interval = setInterval(() => { 
       if(this.playPauseService.getPlay())
         this.beat.emit(this.beatMarkerService.getBeat()); 
-    },350)
+    },175)
   }
 }
